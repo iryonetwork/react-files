@@ -71,6 +71,9 @@ class Files extends React.Component {
         files.push(file)
       }
     }
+
+    this.props.onFilesAdded.call(this, files)
+
     this.setState({
       files: this.props.multiple === false
         ? files
@@ -251,6 +254,7 @@ Files.propTypes = {
   className: PropTypes.string.isRequired,
   dropActiveClassName: PropTypes.string,
   onChange: PropTypes.func,
+  onFilesAdded: PropTypes.func,
   onError: PropTypes.func,
   accepts: PropTypes.array,
   multiple: PropTypes.bool,
@@ -266,6 +270,7 @@ Files.defaultProps = {
   onChange: function (files) {
     console.log(files)
   },
+  onFilesAdded: function () {},
   onError: function (error, file) {
     console.log('error code ' + error.code + ': ' + error.message)
   },

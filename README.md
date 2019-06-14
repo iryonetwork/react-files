@@ -92,6 +92,12 @@ Perform work on files added when submit is clicked.
 
 ---
 
+`onFilesAdded(files)` - *Function*
+
+Perform work or notify user when new files are added.
+
+---
+
 `onError(error, file)` - *Function*
   - `error.code` - Number
   - `error.message` - String
